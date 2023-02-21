@@ -46,7 +46,7 @@ public class SnackMachine {
                  System.out.println("Invalid input. Please enter a number or 'done'.");
                  }
              }
-     
+            System.out.println("You have inserted $" + total + ".");
         
              //User confirms transaction
              System.out.println("Are you sure that you want to purchase " + snacks[selection] + "for $" + prices[selection]+"? (yes/no)");
