@@ -27,6 +27,26 @@ public class SnackMachine {
         int selection = scanner.nextInt();
         System.out.println("You have selected " + snacks[selection] + ".");
         
+     // User inserts money
+         double total = 0.0;
+           while (true) {
+             System.out.println("Please insert $1 bills. Type 'done' when finished.");
+             String input = scanner.next();
+             if (input.equalsIgnoreCase("done")) {
+                 break;
+                                 }
+             try {
+                 double amount = Double.parseDouble(input);
+                    if (amount == 1.0) {
+                      total += amount;
+                 } else {
+                     System.out.println("Only $1 bills are accepted.");
+                    }
+             } catch (NumberFormatException e) {
+                 System.out.println("Invalid input. Please enter a number or 'done'.");
+                 }
+             }
+     
         
 
     }
