@@ -48,6 +48,25 @@ public class SnackMachine {
              }
      
         
+             //User confirms transaction
+             System.out.println("Are you sure that you want to purchase " + snacks[selection] + "for $" + prices[selection]+"? (yes/no)");
+             String confirm = scanner.next();
+             if(confirm.equalsIgnoreCase("no") ||  confirm.equalsIgnoreCase("n")){
+                System.out.println("Transaction was cancelled. Here is your refund of $" + total + ".");
+                System.exit(0);
+             }
+
+             //Dispense Exact change
+             double change = total - prices[selection];
+             System.out.println("Please take your "+ snacks[selection]+".");
+             if(change > 0.0){
+                System.out.println("Here is your change of $" + change + ".");
+             } else {
+                System.out.println("No chance needed");
+             }
+
+             //Departure Message
+             System.out.println("Enjoy your $" + snacks[selection]+ "! Thank you for using the snack machine!");
 
     }
 }
